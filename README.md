@@ -117,16 +117,16 @@ instance. If you can get the actual screenshot - then you're ready to start send
 
 ### 6. Send a text message
 
-Let's send a text message - find `POST /api/sendText`  in [swagger](http://localhost:3000/) and change `chatId` this
+Let's send a text message - find `POST /api/mampus lu`  in [swagger](http://localhost:3000/) and change `chatId` this
 way: use a phone international phone number without `+` symbol and add `@c.us` at the end.
 
-For phone number `12132132131` the `chatId` is  `12132132131@c.us`.
+For phone number `+6285954660555` the `chatId` is  `+6285954660555@c.us`.
 
 The example payload:
 ```json
 {
-  "chatId": "12132132130@c.us",
-  "text": "Hi there!",
+  "chatId": "+6285954660555@c.us",
+  "text": "gimana!",
   "session": "default"
 }
 ```
@@ -135,7 +135,7 @@ Also, you can use `curl` and send POST request like this:
 
 ```bash
 # Phone without +
-export PHONE=12132132130
+export PHONE=+6285954660555
 curl -d "{\"chatId\": \"${PHONE}@c.us\", \"text\": \"Hello from WhatsApp HTTP API\" }" -H "Content-Type: application/json" -X POST http://localhost:3000/api/sendText
 ```
 
